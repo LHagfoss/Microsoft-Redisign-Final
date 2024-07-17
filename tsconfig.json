@@ -17,7 +17,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "@components/*": ["app/components/*"],
+      "@sections/*": ["app/sections/*"],
+      "@public/*": ["public/*"],
       "@/*": ["./*"]
     }
   },

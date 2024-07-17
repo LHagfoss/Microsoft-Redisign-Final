@@ -2,32 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white;
+    scroll-behavior: smooth;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection { background-color: #ffffff9d; }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.navbar { z-index: 9999; }
+
+a {
+  display: flex;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 300ms ease-in-out;
+}
+
+a:hover::after { width: 100%; }
+
+.box a {
+  display: flex;
+  position: relative;
+}
+
+.box a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 300ms ease-in-out;
+}
+
+.box:hover a::after { width: 100%; }
+
+button {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid #005ca5;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+button:hover::before { opacity: 1; }
+
+.card-image { transition: scale 2s cubic-bezier(0.075, 0.82, 0.165, 1); }
+.card:hover .card-image { scale: 1.1; }
+
+.more-consoles:hover .more-consoles-span { transform: translateX(3px); }
+
+.more-consoles-span { 
+  scale: 1.2;
+  position: absolute; 
+  margin-left: 5px; transition: 
+  transform 100ms ease-in-out; 
 }

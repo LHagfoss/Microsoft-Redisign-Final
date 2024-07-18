@@ -94,3 +94,6 @@ button:hover::before { opacity: 1; }
   margin-left: 5px; transition: 
   transform 100ms ease-in-out; 
 }
+
+.arrowUp { transition: transform 100ms ease-in-out; }
+.backToTop:hover .arrowUp { transform: translateY(-3px); }
